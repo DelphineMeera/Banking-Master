@@ -1,34 +1,24 @@
 <%-- 
-    Document   : index
-    Created on : Nov 11, 2011, 11:35:30 PM
+    Document   : forgot
+    Created on : Nov 26, 2011, 12:24:53 PM
     Author     : Rahul
 --%>
 
-<%@page import="application.CookieHandle"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>welcome page</title>
+        <title>forgot password</title>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
-        <h1>welcome to our banking services</h1>
-        <%
-            String username=CookieHandle.checkForCookie(request);
-            if(username!=null){
-                if(!username.equals("")){
-                        
-                      }
-                }
-
-        %>
+        <h1>Forgot Password</h1>
         <div class="holder">
-            <div id="info">
+
+             <div id="info">
                   <%
             String error=request.getParameter("err");
             if(error!=null){
@@ -69,20 +59,22 @@
         %>
 
              </div>
-        <div id="login">
-            <form method="post" action="/Controller" >
+         <form method="post" action="./Controller" >
                 <label for="username" >username</label>
                 <input type="text" name="username" />
-                <label for="password" >password</label>
-                <input type="password" name="password" />
-                <input type="submit" value="login" name="login" />
-            </form>
-            <a href="forgot.jsp" id="forgot">forgot password?</a>
-            <br/>
-            <a href="application_form.jsp" id="apply">APPLY NOW</a>
+                <label for="security_question" >security question</label>
+                <select name="security_question">
+                    <option>what is ur birth place?
+                    <option>what is ur nick name?
+                    <option>what is ur first phone number?
+                </select>
+                <label for="security_answer">answer</label>
+              <input type="text" name="security_answer" />
+              <input type ="submit" value="submit"name="forgot_password">
 
-        </div>
-       
+            </form>
+            <a href="index.jsp" id="forgot">back to login page</a>
+            <br/>
         </div>
     </body>
 </html>

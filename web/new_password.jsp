@@ -1,34 +1,23 @@
 <%-- 
-    Document   : index
-    Created on : Nov 11, 2011, 11:35:30 PM
+    Document   : new_password
+    Created on : Feb 15, 2012, 7:16:53 AM
     Author     : Rahul
 --%>
 
-<%@page import="application.CookieHandle"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>welcome page</title>
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <title>New password</title>
     </head>
     <body>
-        <h1>welcome to our banking services</h1>
-        <%
-            String username=CookieHandle.checkForCookie(request);
-            if(username!=null){
-                if(!username.equals("")){
-                        
-                      }
-                }
+        <h1>New Password</h1>
+         <div class="holder">
 
-        %>
-        <div class="holder">
-            <div id="info">
+             <div id="info">
                   <%
             String error=request.getParameter("err");
             if(error!=null){
@@ -69,20 +58,21 @@
         %>
 
              </div>
-        <div id="login">
-            <form method="post" action="/Controller" >
-                <label for="username" >username</label>
-                <input type="text" name="username" />
-                <label for="password" >password</label>
-                <input type="password" name="password" />
-                <input type="submit" value="login" name="login" />
-            </form>
-            <a href="forgot.jsp" id="forgot">forgot password?</a>
-            <br/>
-            <a href="application_form.jsp" id="apply">APPLY NOW</a>
 
-        </div>
-       
-        </div>
+         <form method="post" action="./Controller">
+
+             <input type="hidden" name="username" value="<%= request.getParameter("username") %>" />
+
+            <label for="password">new password</label>
+            <input type="password" name="password" >
+            <br/>
+             <label for="new_password">retype password</label>
+            <input type="password" name="new_password" >
+            <br/>
+
+            <input type="submit" name="reset_password" value="change">
+        </form>
+         </div>
+
     </body>
 </html>
