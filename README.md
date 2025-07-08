@@ -18,10 +18,10 @@ A full-featured **Banking Application** built to simulate real-world banking ope
 
 ## Technologies Used
 
-- **Backend**: Java / Spring Boot / (or your stack – customize if needed)
-- **Frontend**: HTML, CSS, JavaScript / (React, Thymeleaf, etc.)
-- **Database**: MySQL / PostgreSQL
+- **Backend**: Java / Spring Boot 
+- **Frontend**: HTML, CSS, JavaScript / (React)
+- **Database**: MySQL 
 - **Security**: Spring Security / JWT / CSRF protection
-- **Build Tools**: Maven / Gradle
-- **Version Control**: Git & GitHub
+- **Build Tools**: Maven 
+- **Version Control**: Git 
 
